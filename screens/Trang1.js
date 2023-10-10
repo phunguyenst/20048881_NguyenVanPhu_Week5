@@ -1,15 +1,21 @@
 import {StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { Entypo, Feather } from '@expo/vector-icons';
+import React, { useEffect, useState} from 'react'
+import { Entypo, Feather, AntDesign  } from '@expo/vector-icons';
 import { TextInput } from 'react-native-paper'
+import { useNavigation } from '@react-navigation/native';
 
+export default function screen1(router){
+   const navigation = useNavigation()
+   const [image , setImage] = useState(require('../assets/vs_blue.jpg'))
 
-export default function screen1(){
+//    useEffect(()=>{
+//         setImage(router.params);
+//    },[router.params])
     return(
         <View style = {styles.container}>
             
             <View style= {{flex: 3, alignItems:"center", justifyContent:"center", marginTop: 30}}>
-                <Image source={require('../assets/vs_blue.jpg')} style={{height: 361, width:301}}/>
+                <Image source={image} style={{height: 361, width:301}}/>
             </View>
           
            
@@ -37,7 +43,7 @@ export default function screen1(){
                     <Feather name="help-circle" size={24} color="black" style ={{marginLeft:10}}/>
                 </View>
                 <View >
-                    <TextInput
+                    {/* <TextInput
                         style={{height: 40, borderColor: 'gray', borderWidth: 1, margin:20, borderRadius:10,textAlign:"center"}}
                         placeholder="4 MÀU-CHỌN MÀU"
                         right = {
@@ -47,15 +53,29 @@ export default function screen1(){
                             color="black"
                             />
                         }
+                        onPress = {()=>{
+                            navigation.navigate('screen3')
+                        }}
                     >
 
-                    </TextInput>
+                    </TextInput> */}
+                    <TouchableOpacity style = {{height: 40, borderColor: 'yellow', borderWidth: 1, margin:20, borderRadius:10,textAlign:"center"}}
+                    
+                    onPress = {()=>{
+                            navigation.navigate('screen2')
+                        }}
+                    >
+                        <Text style = {{color:"#333", fontWeight:"bold", fontSize:18, textAlign: "center", margin:"auto"}}
+                        >4 MÀU-CHỌN MÀU</Text>
+                        <AntDesign name="right" size={24} color="black" style = {{position:"absolute", top:5, right:0}}/>
+                    </TouchableOpacity>
                 </View>
             </View>
           
            <View style ={{flex:1, alignItems:"center"}}>
             <TouchableOpacity style = {{backgroundColor:"#EE0A0A", height:47, width:350, alignItems:"center", borderRadius:10}}>
                 <Text style = {{color:"white", fontWeight:"bold", fontSize:18}}>CHỌN MUA</Text>
+               
             </TouchableOpacity>
            </View>
 

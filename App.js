@@ -3,13 +3,15 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import screen1 from './screens/Trang1';
 import screen2 from './screens/Trang2';
+import screem3 from './screens/Trang3'
 const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="screen1" component={screen1} options={{headerShown: false} }/>
-        {/* <Stack.screen name="screen2" component={screen2} /> */}
+        {/* <Stack.Screen name="screen1" component={screen1} options={{headerShown: false} }/>
+        <Stack.Screen name="screen2" component={screen2} options={{headerShown: false} }/> */}
+        <Stack.Screen name="screen3" component={screem3} options={{headerShown: false} }/>
       </Stack.Navigator>
     </NavigationContainer>
   );

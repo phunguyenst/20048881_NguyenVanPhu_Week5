@@ -3,7 +3,7 @@ import React, { useState} from "react";
 
 import { TextInput } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
-export default function Trang3() {
+export default function Trang3({}) {
     const natigation = useNavigation()
     const [image ,setImage] = useState(require("../assets/vs_blue.jpg"))
     const [text, setText] = useState("xanh")
@@ -11,7 +11,8 @@ export default function Trang3() {
     <View style={styles.container}>
       <View style={{ flex: 1, flexDirection: "row" }}>
         <Image
-          style={{ height: 132, width: 112 , resizeMode:"contain"}}
+          style={{ height: 132, width: 112 }}
+          resizeMode="contain"
           source={image}
         ></Image>
         <View style={{ flexDirection: "column", marginLeft: 10 }}>
@@ -69,7 +70,7 @@ export default function Trang3() {
                 
             }}
             onPress={()=>{
-                natigation.navigate("screen1")
+                natigation.navigate("screen1", image)
             }}
             >
                 <Text style ={{textAlign:"center", margin:"auto", color:"#fff", fontSize: "20px"}}>XONG</Text>

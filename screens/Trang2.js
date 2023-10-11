@@ -55,7 +55,7 @@ export default function Trang3() {
                 
             }}
             onPress={()=>{
-                natigation.navigate("screen1")
+                natigation.navigate("screen3")
             }}
             >
                 <Text style ={{textAlign:"center", margin:"auto", color:"#fff", fontSize: "20px"}}>XONG</Text>

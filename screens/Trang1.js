@@ -4,18 +4,22 @@ import { Entypo, Feather, AntDesign  } from '@expo/vector-icons';
 import { TextInput } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native';
 
-export default function screen1(router){
-   const navigation = useNavigation()
-   const [image , setImage] = useState(require('../assets/vs_blue.jpg'))
+export default function screen1({route, navigation}){
 
-//    useEffect(()=>{
-//         setImage(router.params);
-//    },[router.params])
+   
+   const [image , setImage] = useState()
+
+   useEffect(() => {
+    setImage(route.params);
+  }, [route.params]);
+  
     return(
         <View style = {styles.container}>
             
             <View style= {{flex: 3, alignItems:"center", justifyContent:"center", marginTop: 30}}>
-                <Image source={image} style={{height: 361, width:301}}/>
+                <Image source={route.params || require('../assets/vs_blue.jpg')} style={{height: 361, width:301}}
+                resizeMode="contain"
+                />
             </View>
           
            
@@ -62,7 +66,7 @@ export default function screen1(router){
                     <TouchableOpacity style = {{height: 40, borderColor: 'yellow', borderWidth: 1, margin:20, borderRadius:10,textAlign:"center"}}
                     
                     onPress = {()=>{
-                            navigation.navigate('screen2')
+                            navigation.navigate('screen3')
                         }}
                     >
                         <Text style = {{color:"#333", fontWeight:"bold", fontSize:18, textAlign: "center", margin:"auto"}}

@@ -9,8 +9,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="screen1" component={screen1} options={{headerShown: false} }/>
-        <Stack.Screen name="screen2" component={screen2} options={{headerShown: false} }/> */}
+        <Stack.Screen name="screen1" component={screen1} options={{headerShown: false} }/>
+        {/* <Stack.Screen name="screen2" component={screen2} options={{headerShown: false} }/> */}
         <Stack.Screen name="screen3" component={screem3} options={{headerShown: false} }/>
       </Stack.Navigator>
     </NavigationContainer>
